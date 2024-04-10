@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/presentation/widgets/chat/his_message_bubble.dart';
 import 'package:yes_no_app/presentation/widgets/chat/my_message_bubble.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -8,7 +9,7 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Brad 💖'),
+        title: const Text('Brad Pitt'),
         leading: const Padding(
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
@@ -34,11 +35,13 @@ class _ChatView extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 100,
                 itemBuilder: (context, index) {
-                  return const MyMessageBubble();
+                  // (index % 2 == 0) indicates when a number is even
+                  return (index % 2 == 0)
+                      ? const HisMessageBubble()
+                      : const MyMessageBubble();
                 },
               ),
             ),
-            const Text("hi"),
           ],
         ),
       ),
