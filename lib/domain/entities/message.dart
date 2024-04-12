@@ -1,5 +1,5 @@
 /* identifies who is the sender of the message */
-enum FromWho { mine, his }
+enum FromWho { me, his }
 
 class Message {
   final String text;
