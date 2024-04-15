@@ -41,6 +41,7 @@ class _ChatView extends StatelessWidget {
             /* Displays existing messages from the provider's list */
             Expanded(
               child: ListView.builder(
+                controller: chatProvider.chatScrollController,
                 itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
                   /* reference to the provider that returns an instance of a message */
