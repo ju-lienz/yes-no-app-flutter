@@ -27,6 +27,7 @@ class ChatScreen extends StatelessWidget {
   }
 }
 
+/* Renders the chat view with message list and input field. */
 class _ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,6 +38,7 @@ class _ChatView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
           children: [
+            /* Displays existing messages from the provider's list */
             Expanded(
               child: ListView.builder(
                 itemCount: chatProvider.messageList.length,
@@ -49,6 +51,7 @@ class _ChatView extends StatelessWidget {
                 },
               ),
             ),
+            /* Input field for sending new messages */
             MessageFieldBox(
               onValue: (String value) => chatProvider.sendMessage(value),
             ),

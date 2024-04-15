@@ -40,7 +40,7 @@ class _ImageBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     /* The media query gives information about the device that is running it, the
     context gives the widget tree and the size gives the size of the device */
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size; // Get the screen size
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
@@ -50,6 +50,8 @@ class _ImageBubble extends StatelessWidget {
         fit: BoxFit.cover,
         loadingBuilder: (context, child, loadingProgress) {
           if (loadingProgress == null) return child;
+
+          /* Show a placeholder while the image is loading*/
           return Container(
             width: size.width * 0.7,
             height: 150,
