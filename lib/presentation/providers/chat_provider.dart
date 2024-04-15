@@ -10,6 +10,10 @@ class ChatProvider extends ChangeNotifier {
 
   /* Methods */
   Future<void> sendMessage(String text) async {
-    //todo: implement
+    final newMessage = Message(text: text, fromWho: FromWho.me);
+    messageList.add(newMessage);
+    /* Indicates that the provider has changed and that you must notify
+    everyone who is listening to this provider.*/
+    notifyListeners();
   }
 }
