@@ -21,7 +21,6 @@ class MessageFieldBox extends StatelessWidget {
         onPressed: () {
           final textValue =
               textController.value.text; // Gets the value of the input
-          print("button $textValue");
           textController.clear();
         },
       ),
@@ -34,7 +33,6 @@ class MessageFieldBox extends StatelessWidget {
       controller: textController,
       decoration: inputDecoration,
       onFieldSubmitted: (value) {
-        print("Submit value $value");
         textController.clear(); // Clean the value
         focusNode
             .requestFocus(); // After clearing the focus of the input, it keeps it
