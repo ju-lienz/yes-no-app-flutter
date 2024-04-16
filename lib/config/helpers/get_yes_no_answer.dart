@@ -5,6 +5,10 @@ class GetYesNoAnswer {
   final _dio = Dio();
   Future<Message> getAnswer() async {
     final response = await _dio.get('https://yesno.wtf/api');
-    throw UnimplementedError();
+    response.data['answer'];
+    return Message(
+        text: response.data['answer'],
+        fromWho: FromWho.his,
+        imageURL: response.data['image']);
   }
 }

@@ -34,6 +34,9 @@ class ChatProvider extends ChangeNotifier {
   /* Function will be executed when it detects that a question has been sent */
   Future<void> herReply() async {
     final herMessage = await getYesNoAnswer.getAnswer();
+    messageList.add(herMessage);
+    notifyListeners();
+    moveScrollToBottom();
   }
 
   Future<void> moveScrollToBottom() async {
